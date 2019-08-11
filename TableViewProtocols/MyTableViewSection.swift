@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 class MyTableViewSection: TableViewSection {
 	
 	var items: [TableViewCompatible]

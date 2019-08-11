@@ -17,10 +17,10 @@ class TableViewController: UITableViewController {
 	private var tableViewSections = [
 		
 		MyTableViewSection(items: [
-				BasicCellModel(title: "cell 1"),
-				BasicCellModel(title: "cell 2"),
-				BasicCellModel(title: "cell 3"),
-			], headerTitle: "Basic Cells"),
+			BasicCellModel(title: "cell 1"),
+			BasicCellModel(title: "cell 2"),
+			BasicCellModel(title: "cell 3"),
+		], headerTitle: "Basic Cells"),
 		
 		MyTableViewSection(items: [
 			RightDetailCellModel(title: "cell", detail: "1"),
@@ -31,14 +31,14 @@ class TableViewController: UITableViewController {
 	
 	// MARK: - view controler life-cycle
 	
-    override func viewDidLoad() {
+	override func viewDidLoad() {
 		
-        super.viewDidLoad()
-
+		super.viewDidLoad()
+		
 		myDataSource.sections = tableViewSections
 		
 		tableView.dataSource = myDataSource
-
+		
 		tableView.reloadData()
-    }
+	}
 }
