@@ -13,6 +13,8 @@ protocol DeletableCellModelDelegate {
 	func deleteRowAtIndexPath(_ indexPath: IndexPath)
 }
 
+/// - Tag: DeletableCell
+
 class DeletableCellModel: TableViewCompatible {
 	
 	var reuseIdentifier: String {

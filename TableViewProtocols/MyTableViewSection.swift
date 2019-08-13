@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// - Tag: MyTableViewSection
+
 class MyTableViewSection: TableViewSection {
 	
 	var items: [TableViewCompatible]

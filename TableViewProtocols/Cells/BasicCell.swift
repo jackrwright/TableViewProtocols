@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// - Tag: TableViewCompatible
+
 class BasicCellModel: TableViewCompatible {
 	
 	var reuseIdentifier: String {

@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// - Tag: TableViewController
+
 class TableViewController: UITableViewController {
 
 	// MARK: - Private (properties)
@@ -29,7 +31,7 @@ class TableViewController: UITableViewController {
 		], headerTitle: "Right Detail Cells"),
 		
 		MyTableViewSection(items: [
-			DeletableCellModel(title: "cell 1 can be delted", delegate: self),
+			DeletableCellModel(title: "cell 1 can be deleted", delegate: self),
 			DeletableCellModel(title: "cell 2 cannot be deleted"),
 			DeletableCellModel(title: "cell 3 can be deleted", delegate: self),
 			], headerTitle: "Deletable Cells"),
@@ -48,6 +50,8 @@ class TableViewController: UITableViewController {
 		tableView.reloadData()
 	}
 }
+
+/// - Tag: deleteRowAtIndexPath
 
 extension TableViewController: DeletableCellModelDelegate {
 
