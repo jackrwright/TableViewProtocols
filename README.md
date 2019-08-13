@@ -60,7 +60,7 @@ class BasicTableViewCell: UITableViewCell, Configurable {
 	}
 }
 ```
-[View in Source](x-source-tag://TableViewCompatible)
+[View in Source](https://github.com/jackrwright/TableViewProtocols/blob/master/TableViewProtocols/Cells/BasicCell.swift)
 
 #### Define a class that conforms to the `TableViewSection` protocol...
 ```swift
@@ -81,7 +81,7 @@ class MyTableViewSection: TableViewSection {
 	}
 }
 ```
-[View in Source](x-source-tag://MyTableViewSection)
+[View in Source](https://github.com/jackrwright/TableViewProtocols/blob/master/TableViewProtocols/MyTableViewSection.swift)
 
 #### Now your Table View Controller can be as simple as:
 ```swift
@@ -120,7 +120,7 @@ class TableViewController: UITableViewController {
 	}
 }
 ```
-[View in Source](x-source-tag://TableViewController)
+[View in Source](https://github.com/jackrwright/TableViewProtocols/blob/master/TableViewProtocols/TableViewController.swift)
 
 #### To make a cell swipe-deletable, add the `canDelete` var and `func commit(editingStyle:, forRowAt indexPath:)` to the model to initiate the deletion. In the following example, a protocol is defined to perform the deletion from the table, but you can do whatever is appropriate for your app:
 
@@ -164,7 +164,7 @@ class DeletableCellModel: TableViewCompatible {
 	}
 }
 ```
-[View in Source](x-source-tag://DeletableCell)
+[View in Source](https://github.com/jackrwright/TableViewProtocols/blob/master/TableViewProtocols/Cells/DeletableCell.swift)
 
 #### The view controller code for adding deletable cells is:
 
