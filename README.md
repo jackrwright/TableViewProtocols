@@ -176,7 +176,7 @@ class DeletableCellModel: TableViewCompatible {
 			], headerTitle: "Deletable Cells"),
 ```
 
-#### And an exampled of the delegate code is:
+#### And an example of the delegate code is:
 
 ```swift
 extension TableViewController: DeletableCellModelDelegate {
