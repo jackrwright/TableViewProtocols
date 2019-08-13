@@ -14,7 +14,7 @@ class TableViewController: UITableViewController {
 	
 	private var myDataSource = TableViewDataSource()
 	
-	private var tableViewSections = [
+	private lazy var tableViewSections = [
 		
 		MyTableViewSection(items: [
 			BasicCellModel(title: "cell 1"),
@@ -27,6 +27,12 @@ class TableViewController: UITableViewController {
 			RightDetailCellModel(title: "cell", detail: "2"),
 			RightDetailCellModel(title: "cell", detail: "3"),
 		], headerTitle: "Right Detail Cells"),
+		
+		MyTableViewSection(items: [
+			DeletableCellModel(title: "cell 1 can be delted", delegate: self),
+			DeletableCellModel(title: "cell 2 cannot be deleted"),
+			DeletableCellModel(title: "cell 3 can be deleted", delegate: self),
+			], headerTitle: "Deletable Cells"),
 	]
 	
 	// MARK: - view controler life-cycle
@@ -40,5 +46,17 @@ class TableViewController: UITableViewController {
 		tableView.dataSource = myDataSource
 		
 		tableView.reloadData()
+	}
+}
+
+extension TableViewController: DeletableCellModelDelegate {
+
+	func deleteRowAtIndexPath(_ indexPath: IndexPath) {
+
+		self.tableViewSections[indexPath.section].items.remove(at: indexPath.row)
+
+		DispatchQueue.main.async {
+			self.tableView.reloadData()
+		}
 	}
 }

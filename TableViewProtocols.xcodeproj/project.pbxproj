@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		216134002301F0CD00BF306F /* DeletableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216133FF2301F0CD00BF306F /* DeletableCell.swift */; };
 		216EC59D2300A9C50001F7A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 216EC59C2300A9C50001F7A5 /* README.md */; };
 		21737AC122FDAFE600890397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21737AC022FDAFE600890397 /* AppDelegate.swift */; };
 		21737AC622FDAFE600890397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21737AC422FDAFE600890397 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		216133FF2301F0CD00BF306F /* DeletableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletableCell.swift; sourceTree = "<group>"; };
 		216EC59C2300A9C50001F7A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21737ABD22FDAFE600890397 /* TableViewProtocols.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewProtocols.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21737AC022FDAFE600890397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				21737ADE22FDB55800890397 /* BasicCell.swift */,
+				216133FF2301F0CD00BF306F /* DeletableCell.swift */,
 				21737AE522FF004700890397 /* RightDetailCell.swift */,
 			);
 			path = Cells;
@@ -188,6 +191,7 @@
 				21737AE122FEE98200890397 /* TableViewController.swift in Sources */,
 				21737ADF22FDB55800890397 /* BasicCell.swift in Sources */,
 				21737AC122FDAFE600890397 /* AppDelegate.swift in Sources */,
+				216134002301F0CD00BF306F /* DeletableCell.swift in Sources */,
 				21737AD622FDB07000890397 /* TableViewCompatible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

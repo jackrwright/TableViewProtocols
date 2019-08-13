@@ -38,8 +38,28 @@
                                     <outlet property="titleLabel" destination="DAG-dw-zia" id="KTs-td-bC5"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RightDetailCellID" textLabel="rfR-Cx-WcI" detailTextLabel="HJz-tM-MHa" style="IBUITableViewCellStyleValue1" id="dCV-0U-gq9" customClass="RightDetailTableViewCell" customModule="TableViewProtocols" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeletableCellID" textLabel="hN4-B3-c3q" style="IBUITableViewCellStyleDefault" id="PgW-sQ-C0F" customClass="DeletableTableViewCell" customModule="TableViewProtocols" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PgW-sQ-C0F" id="veo-i9-hPV">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hN4-B3-c3q">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="hN4-B3-c3q" id="7V7-bi-haN"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RightDetailCellID" textLabel="rfR-Cx-WcI" detailTextLabel="HJz-tM-MHa" style="IBUITableViewCellStyleValue1" id="dCV-0U-gq9" customClass="RightDetailTableViewCell" customModule="TableViewProtocols" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dCV-0U-gq9" id="gZn-So-AfL">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
