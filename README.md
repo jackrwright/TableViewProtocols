@@ -11,14 +11,14 @@ I enhanced it to handle support for:
 * Swipe delete of cells.
 * Section titles.
 
-### Add the following protocol files in your project:
+#### Add the following protocol files in your project:
 * TableViewCompatible.swift
 * TableViewSection.swift
 
-### The protocols enable us to define a generic UITableView datasource to be added in your project:
+#### The protocols enable us to define a generic UITableView datasource to be added in your project:
 * TableViewDataSource.swift
 
-### For each cell type...
+#### For each cell type...
 * Define a cell model that conforms to the `TableViewCompatible` protocol.
 * Define a UITableViewCell that conforms to the `Configurable` protocol.
 
@@ -61,7 +61,7 @@ class BasicTableViewCell: UITableViewCell, Configurable {
 }
 ```
 
-### Define a class that conforms to the `TableViewSection` protocol...
+#### Define a class that conforms to the `TableViewSection` protocol...
 ```swift
 class MyTableViewSection: TableViewSection {
 	
@@ -81,7 +81,7 @@ class MyTableViewSection: TableViewSection {
 }
 ```
 
-### Now your Table View Controller can be as simple as:
+#### Now your Table View Controller can be as simple as:
 ```swift
 class TableViewController: UITableViewController {
 
@@ -115,6 +115,73 @@ class TableViewController: UITableViewController {
 		tableView.dataSource = myDataSource
 		
 		tableView.reloadData()
+	}
+}
+```
+#### To make a cell swipe-deletable, add the `canDelete` var and `func commit(editingStyle:, forRowAt indexPath:)` to the model to initiate the deletion. In the following example, a protocol is defined to perform the deletion from the table, but you can do whatever is appropriate for your app:
+
+```swift
+protocol DeletableCellModelDelegate {
+
+	func deleteRowAtIndexPath(_ indexPath: IndexPath)
+}
+
+class DeletableCellModel: TableViewCompatible {
+	
+	var reuseIdentifier: String {
+		return "DeletableCellID"
+	}
+	
+	var title: String
+	var canDelete: Bool = false
+	var delegate: DeletableCellModelDelegate?
+
+	init(title: String, delegate: DeletableCellModelDelegate? = nil) {
+		self.title = title
+		self.delegate = delegate
+		self.canDelete = delegate != nil
+	}
+
+	func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell {
+		
+		let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath) as! DeletableTableViewCell
+		
+		cell.configureWithModel(self)
+
+		return cell
+	}
+
+	func commit(editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		
+		if editingStyle == .delete {
+			
+			self.delegate?.deleteRowAtIndexPath(indexPath)
+		}
+	}
+}
+```
+#### The view controller code for adding deletable cells is:
+
+```swift
+		MyTableViewSection(items: [
+			DeletableCellModel(title: "cell 1 can be delted", delegate: self),
+			DeletableCellModel(title: "cell 2 cannot be deleted"),
+			DeletableCellModel(title: "cell 3 can be deleted", delegate: self),
+			], headerTitle: "Deletable Cells"),
+```
+
+#### And an exampled of the delegate code is:
+
+```swift
+extension TableViewController: DeletableCellModelDelegate {
+
+	func deleteRowAtIndexPath(_ indexPath: IndexPath) {
+
+		self.tableViewSections[indexPath.section].items.remove(at: indexPath.row)
+
+		DispatchQueue.main.async {
+			self.tableView.reloadData()
+		}
 	}
 }
 ```
