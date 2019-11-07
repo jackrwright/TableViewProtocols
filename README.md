@@ -18,6 +18,7 @@ I enhanced it to handle support for:
 #### The protocols enable us to define a generic UITableView datasource to be added in your project:
 * TableViewDataSource.swift
 
+[View in Source](https://github.com/jackrwright/TableViewProtocols/blob/master/TableViewProtocols/Datasources/TableViewDataSource.swift)
 #### For each cell type...
 * Define a cell model that conforms to the `TableViewCompatible` protocol.
 * Define a UITableViewCell that conforms to the `Configurable` protocol.
